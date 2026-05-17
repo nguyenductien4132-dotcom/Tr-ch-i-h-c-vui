@@ -1,0 +1,6 @@
+{
+  "name": "Đập Chuột Vũ Trụ",
+  "description": "Trò chơi giáo dục tương tác học mà chơi, hỗ trợ thi đấu 2 đội, tự động sinh câu hỏi theo chủ đề.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

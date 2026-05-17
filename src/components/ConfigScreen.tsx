@@ -35,7 +35,12 @@ export function ConfigScreen({ onStartGame }: ConfigScreenProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to generate questions. Please try again.");
+        let msg = "Failed to generate questions. Please try again.";
+        try {
+           const errData = await response.json();
+           if (errData.error) msg = errData.error;
+        } catch(e) {}
+        throw new Error(msg);
       }
 
       const data = await response.json();

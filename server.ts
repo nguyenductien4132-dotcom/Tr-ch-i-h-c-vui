@@ -44,7 +44,7 @@ Lưu ý:
 - Không lặp lại câu hỏi.`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -73,9 +73,9 @@ Lưu ý:
 
       const generatedQuestions = JSON.parse(text);
       res.json({ questions: generatedQuestions });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error generating questions:", error);
-      res.status(500).json({ error: "Failed to generate questions" });
+      res.status(500).json({ error: error.message || "Failed to generate questions" });
     }
   });
 
